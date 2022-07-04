@@ -1,20 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import bag from './media/bag.svg';
+import lining from './media/lining.svg';
+import heart from './media/heart/blue-heart.png';
 
 function App() {
   return (
     <div className='App'>
       <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
         <p>Hey girl how you doing</p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
+        <div className='box'>
+          <div className='bag-images column'>
+            <img src={bag} alt='bag' className='bag-body ' />
+            <img src={lining} alt='lining' className='lining' />
+            <img src={heart} alt='heart' className='heart' />
+          </div>
+        </div>
       </header>
     </div>
   );
