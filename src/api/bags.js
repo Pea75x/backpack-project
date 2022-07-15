@@ -43,11 +43,11 @@ export const getOrders = async () => {
   return data;
 };
 
-export const postOrder = async (product) => {
+export const postOrder = async (order) => {
   const options = {
     method: 'POST',
     url: `${baseUrl}/createorder/`,
-    data: product
+    data: order
   };
   const { data } = await axios.request(options);
   return data;
@@ -66,6 +66,17 @@ export const getOrderByUser = async (user) => {
   const options = {
     method: 'GET',
     url: `${baseUrl}/userorders?customer_id=${user}`
+  };
+  const { data } = await axios.request(options);
+  return data;
+};
+
+// ORDER STATUS
+export const postStatus = async (status) => {
+  const options = {
+    method: 'POST',
+    url: `${baseUrl}/orderstatus/`,
+    data: status
   };
   const { data } = await axios.request(options);
   return data;
