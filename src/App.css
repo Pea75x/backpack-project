@@ -6,26 +6,18 @@ body {
 }
 .box {
   border: 2px dashed black;
+  width: 100%;
   display: flex;
-
   justify-content: center;
 }
-.column {
+.bag-images {
   width: 50%;
+  height: 650px;
   border: 1px dashed black;
+  display: flex;
+  justify-content: center;
 }
-.bag-body {
+.bag-part {
   width: 600px;
-}
-.lining {
   position: absolute;
-  left: 570px;
-  top: 135px;
-  width: 508px;
-}
-.heart {
-  position: absolute;
-  left: 764px;
-  top: 227px;
-  width: 139px;
 }
