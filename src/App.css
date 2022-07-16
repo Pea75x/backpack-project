@@ -1,9 +1,17 @@
+/* MAIN */
 .App {
   text-align: center;
 }
 body {
   background-color: lightgreen;
 }
+.flex-center {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* BAG FACTORY */
 .box {
   border: 2px dashed black;
   width: 100%;
@@ -20,4 +28,42 @@ body {
 .bag-part {
   width: 600px;
   position: absolute;
+}
+
+/* STOCK PAGE */
+.stock-page {
+  flex-direction: column;
+  text-align: center;
+}
+.fabric-box {
+  border: 2px solid black;
+  margin: 40px;
+  width: 90%;
+}
+.fabric-rows {
+  width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+}
+.fabric-square {
+  width: 200px;
+  margin: 30px;
+}
+.fabric-form {
+  margin: 20px;
+  flex-direction: column;
+}
+.fabric-input {
+  font-size: 20px;
+  text-align: center;
+
+  margin: 5px;
+  width: 250px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+}
+.fabric-submit {
+  background-color: gray;
 }
