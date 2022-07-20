@@ -1,5 +1,6 @@
 import React from 'react';
 import { getFabrics, postFabrics } from '../api/products';
+import { Link } from 'react-router-dom';
 
 function StockPage() {
   const [fabrics, setFabrics] = React.useState(null);
@@ -68,12 +69,14 @@ function StockPage() {
           <h2>All fabric</h2>
           <div className='fabric-rows flex-center'>
             {fabrics.map((fabric) => (
-              <img
-                key={fabric.id}
-                src={fabric.image}
-                alt={fabric.name}
-                className='fabric-square'
-              />
+              <Link key={fabric.id} to={`/fabric/${fabric.id}`}>
+                <img
+                  key={fabric.id}
+                  src={fabric.image}
+                  alt={fabric.name}
+                  className='fabric-square'
+                />
+              </Link>
             ))}
           </div>
         </div>

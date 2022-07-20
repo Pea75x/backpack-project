@@ -11,6 +11,15 @@ export const getFabrics = async () => {
   return data;
 };
 
+export const getFabricById = async (id) => {
+  const options = {
+    method: 'GET',
+    url: `${baseUrl}/fabric/${id}`
+  };
+  const { data } = await axios.request(options);
+  return data;
+};
+
 export const postFabrics = async (fabric) => {
   const options = {
     method: 'POST',
@@ -53,7 +62,16 @@ export const getProductById = async (id) => {
 export const getProductByPart = async (part) => {
   const options = {
     method: 'GET',
-    url: `${baseUrl}/productsearch/?part=${part}`
+    url: `${baseUrl}/productpart/?part=${part}`
+  };
+  const { data } = await axios.request(options);
+  return data;
+};
+
+export const getProductByFabric = async (fabric) => {
+  const options = {
+    method: 'GET',
+    url: `${baseUrl}/productfabric/?fabric=${fabric}`
   };
   const { data } = await axios.request(options);
   return data;
