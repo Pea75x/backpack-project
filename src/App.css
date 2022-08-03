@@ -1,9 +1,11 @@
 /* MAIN */
-.App {
+* {
   text-align: center;
 }
-body {
-  background-color: lightgreen;
+
+.title {
+  font-size: 80px;
+  margin: 20px;
 }
 .flex-center {
   display: flex;
@@ -12,11 +14,27 @@ body {
 }
 
 /* BAG FACTORY */
+@font-face {
+  font-family: 'Mas Pendi Wow Font';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Mas Pendi Wow Font'),
+    url('./media/MasPendiWow-qZK90.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'AAA-Prachid Hand Written Font';
+  font-style: normal;
+  font-weight: normal;
+  src: local('AAA-Prachid Hand Written Font'),
+    url('./media/AaaPrachidHandWritten-0Km9.ttf') format('truetype');
+}
+
+.factory {
+  margin-top: 100px;
+}
 .box {
   border: 2px dashed black;
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 .bag-images {
   width: 50%;
@@ -25,9 +43,136 @@ body {
   display: flex;
   justify-content: center;
 }
+
 .bag-part {
   width: 600px;
   position: absolute;
+  pointer-events: none;
+  z-index: -10;
+}
+.fabric-circle {
+  width: 50px;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.hover:hover {
+  transform: scale(1.1);
+}
+.factory {
+  font-family: 'AAA-Prachid Hand Written Font';
+}
+.name-text {
+  top: 380px;
+  left: 30.5%;
+  border: 3px dashed pink;
+  width: 140px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 40px;
+}
+.moving-box {
+  position: relative;
+  background-color: rgba(128, 128, 128, 0.2);
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 20px;
+  flex-direction: column;
+  height: 100px;
+  font-size: 50px;
+  line-height: 20px;
+}
+.moving-box-p {
+  margin: 0;
+}
+.done {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+.clicked-part {
+  background-color: rgba(204, 200, 200, 0.9);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.208);
+}
+.notDone {
+  border: 2px dashed black;
+  font-weight: bold;
+}
+
+#front {
+  left: 800px;
+  top: 40px;
+}
+
+#bottom {
+  right: 0;
+}
+
+#pocket {
+  right: 200px;
+  bottom: 130px;
+}
+
+#zip {
+  right: 240px;
+  bottom: 150px;
+}
+
+#heart {
+  left: 150px;
+  top: 210px;
+}
+
+#lining {
+  left: 310px;
+  top: 380px;
+}
+
+#top {
+  top: 480px;
+  left: 150px;
+}
+#strap {
+  top: 540px;
+  left: 400px;
+}
+#clasps {
+  top: 350px;
+  right: 830px;
+}
+#bottom {
+  bottom: 50px;
+}
+#side_strap {
+  right: 270px;
+  top: 140px;
+}
+.black {
+  color: black;
+}
+.white {
+  color: white;
+}
+.radio-buttons {
+  display: flex;
+}
+.bag-create-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 40px;
+  font-family: 'AAA-Prachid Hand Written Font';
+}
+.add-name {
+  flex-direction: column;
+  padding: 40px;
+  font-size: 30px;
+}
+.add-name h3 {
+  margin: 0;
+}
+.input-textbox {
+  font-size: 20px;
+  margin: 5px;
 }
 
 /* STOCK PAGE */
@@ -88,4 +233,23 @@ body {
   background-color: pink;
   width: 300px;
   height: 300px;
+}
+.cell {
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  height: 600px;
+  margin: auto;
+  background-color: pink;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

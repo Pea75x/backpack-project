@@ -4,6 +4,7 @@ import BagFactory from './BagFactory';
 import '../App.css';
 import StockPage from './StockPage';
 import Products from './products';
+import Test from './test';
 
 const App = () => (
   <BrowserRouter>
@@ -11,6 +12,7 @@ const App = () => (
       <Route path='/' element={<BagFactory />} />
       <Route path='/stock' element={<StockPage />} />
       <Route path='/fabric/:id' element={<Products />} />
+      <Route path='/test' element={<Test />} />
     </Routes>
   </BrowserRouter>
 );

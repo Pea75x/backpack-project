@@ -77,7 +77,7 @@ function Products() {
       setCreate(true);
       setNewProduct({
         ...blankProduct,
-        name: ` ${part} - ${fabric.name}`,
+        name: ` ${part}-${fabric.name}`,
         part: part,
         fabric: id
       });
