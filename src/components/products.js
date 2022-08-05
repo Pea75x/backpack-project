@@ -6,9 +6,9 @@ import {
   postProduct
 } from '../api/products';
 import bag from '../media/bag-body.svg';
-import bottom from '../media/bottom.png';
-import top from '../media/top.png';
-import front from '../media/front.png';
+// import bottom from '../media/bottom.png';
+// import top from '../media/top.png';
+// import front from '../media/front.png';
 
 function Products() {
   const { id } = useParams();

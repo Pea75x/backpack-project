@@ -8,8 +8,8 @@ function BagFactory() {
   const [textColor, setTextColor] = React.useState('');
   const [partInfo, setPartInfo] = React.useState(null);
   const [newBag, setNewBag] = React.useState({
-    customer_id: 1,
     order_id: 1,
+    customer_id: 1,
     front: '',
     top: '',
     bottom: '',
@@ -49,6 +49,7 @@ function BagFactory() {
     };
     getData();
   }
+
   function fabricChange(part) {
     const index = parts.findIndex((element) => element.code == part.part);
     // change image on webpage
@@ -91,7 +92,7 @@ function BagFactory() {
           {parts.map((part) => (
             <div
               key={part.name}
-              className={`moving-box flex-center ${
+              className={`moving-box flex-center hover ${
                 part.image ? 'done' : 'notDone'
               } ${partName == part.code ? 'clicked-part' : ''}`}
               id={part.code}
