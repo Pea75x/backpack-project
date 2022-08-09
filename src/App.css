@@ -2,12 +2,20 @@
 .center {
   text-align: center;
 }
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 40px;
+  font-family: 'AAA-Prachid Hand Written Font';
+}
 .text {
   margin: 0;
 }
 .title {
   font-size: 80px;
   margin: 20px;
+  font-family: 'AAA-Prachid Hand Written Font';
 }
 .flex-center {
   display: flex;
@@ -157,13 +165,7 @@
 .radio-buttons {
   display: flex;
 }
-.bag-create-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  font-size: 40px;
-  font-family: 'AAA-Prachid Hand Written Font';
-}
+
 .add-name {
   flex-direction: column;
   padding: 40px;
@@ -389,4 +391,20 @@
 }
 #menyAvPaa:checked ~ #burger > div:nth-child(3) {
   transform: translateY(-15px) rotate(-45deg);
+}
+/* my orders */
+.my-orders {
+  text-align: center;
+}
+.my-orders h1 {
+  font-family: 'AAA-Prachid Hand Written Font';
+}
+.my-orders-box {
+  border: 2px dashed black;
+  border-radius: 5px;
+  width: 90%;
+  margin: 10px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
 }

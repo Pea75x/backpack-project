@@ -156,7 +156,7 @@ function BagFactory() {
               </div>
             </div>
           </div>
-          <button className='bag-create-button hover' onClick={createBag}>
+          <button className='button hover' onClick={createBag}>
             Create!
           </button>
         </div>

@@ -8,6 +8,7 @@ import Login from './Login';
 import Register from './Register';
 import Order from './Order';
 import NavBar from './NavBar';
+import MyOrders from './MyOrders';
 
 const App = () => (
   <BrowserRouter>
@@ -19,6 +20,7 @@ const App = () => (
       <Route path='/login' element={<Login />} />
       <Route path='/register' element={<Register />} />
       <Route path='/order/:id' element={<Order />} />
+      <Route path='/myorders/:id' element={<MyOrders />} />
     </Routes>
   </BrowserRouter>
 );

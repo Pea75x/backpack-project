@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
-import { isAdmin } from '../api/auth';
+import { isAdmin, getLoggedInUserId } from '../api/auth';
 
 function NavBar() {
   const navigate = useNavigate();
@@ -8,9 +8,8 @@ function NavBar() {
   const loggedIn = window.sessionStorage.getItem('token');
 
   const [isAdminState, setIsAdminState] = React.useState(isAdmin());
+  const [userId, setUserId] = React.useState(getLoggedInUserId());
   const [menuOpen, setMenuOpen] = React.useState(false);
-  console.log('success: ', loggedIn);
-  console.log('Admin Status: ', isAdminState);
 
   const logout = () => {
     sessionStorage.removeItem('token');
@@ -18,8 +17,11 @@ function NavBar() {
     navigate('/');
   };
 
+  console.log(userId);
+
   React.useEffect(() => {
     setIsAdminState(isAdmin());
+    setUserId(getLoggedInUserId());
   }, [location]);
 
   function openMenu() {
@@ -48,7 +50,9 @@ function NavBar() {
               </Link>
             </li>
             {!isAdminState ? (
-              <li>My orders</li>
+              <Link to={`/myorders/${userId}`} onClick={menuOpen}>
+                <li>My orders</li>
+              </Link>
             ) : (
               <div>
                 <li>

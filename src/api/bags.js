@@ -43,10 +43,10 @@ export const getOrders = async () => {
   return data;
 };
 
-export const postOrder = async (order) => {
+export const createOrder = async (order) => {
   const options = {
     method: 'POST',
-    url: `${baseUrl}/createorder/`,
+    url: `${baseUrl}/orders/`,
     data: order
   };
   const { data } = await axios.request(options);
