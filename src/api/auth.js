@@ -28,3 +28,10 @@ export const loginUser = async (credentials) => {
   console.log('login data', data);
   return data;
 };
+export function isAdmin() {
+  const token = sessionStorage.getItem('token');
+  if (!token) return false;
+
+  const userObject = JSON.parse(window.atob(token.split('.')[1]));
+  return !!userObject.admin;
+}

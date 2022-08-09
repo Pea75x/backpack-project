@@ -1,6 +1,6 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import { getOrderById } from '../api/bags';
+import { useParams, Link } from 'react-router-dom';
+import { getOrderById, postStatus } from '../api/bags';
 import bagBody from '../media/bag-body.svg';
 import BagImage from './BagImage';
 import OrderStatus from './OrderStatus';
@@ -8,6 +8,11 @@ import OrderStatus from './OrderStatus';
 function Order() {
   const [order, setOrder] = React.useState(null);
   const { id } = useParams();
+  const [update, setUpdate] = React.useState(false);
+  const confirmOrder = {
+    order_id: id,
+    status: 'pending'
+  };
 
   React.useEffect(() => {
     const getData = async () => {
@@ -19,15 +24,28 @@ function Order() {
       }
     };
     getData();
-  }, []);
+  }, [update]);
+
+  function purchaseOrder(event) {
+    event.preventDefault();
+    const getData = async () => {
+      try {
+        await postStatus(confirmOrder);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getData();
+    setUpdate(!update);
+  }
 
   console.log(order);
   return (
     <div className='background'>
       {order ? (
-        <div className='order-page container'>
+        <div className='order-page'>
           {/* title */}
-          <div className='title'>order no: {order.id}</div>
+          <div className='order-title'>order no: {order.id}</div>
           {/* box with bag items */}
           <div className='orders-container'>
             {order.items.map((bag) => (
@@ -42,20 +60,28 @@ function Order() {
             ))}
           </div>
           {/* order details */}
-          <div>
+          <div className='order-details'>
             <h2>Total items: {order.items.length}</h2>
             <h2>
-              Order price: <span className='symbols'>£</span>
-              {order.items?.reduce((total, curr) => {
-                return total + parseFloat(curr.price);
-              }, 0)}
+              Order price:
+              <span className='symbols'>
+                £
+                {order.items?.reduce((total, curr) => {
+                  return total + parseFloat(curr.price);
+                }, 0)}
+              </span>
             </h2>
           </div>
           {/* order status */}
           {order.order_status.length > 0 ? (
             <OrderStatus {...order.order_status} />
           ) : (
-            <button>PURCHASE ORDER</button>
+            <div>
+              <Link to={`/create/${id}`}>
+                <button>Create new bag</button>
+              </Link>
+              <button onClick={purchaseOrder}>Purchase Order</button>
+            </div>
           )}
         </div>
       ) : (

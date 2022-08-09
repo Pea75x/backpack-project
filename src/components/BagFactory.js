@@ -2,14 +2,17 @@ import React from 'react';
 import bag from '../media/bag-body.svg';
 import { getProductByPart } from '../api/products';
 import { postBag } from '../api/bags';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function BagFactory() {
+  const navigate = useNavigate();
+  const { id } = useParams();
+
   const [partName, setPartName] = React.useState('');
   const [textColor, setTextColor] = React.useState('');
   const [partInfo, setPartInfo] = React.useState(null);
   const [newBag, setNewBag] = React.useState({
-    order_id: 1,
-    customer_id: 1,
+    order_id: id,
     front: '',
     top: '',
     bottom: '',
@@ -69,6 +72,7 @@ function BagFactory() {
     const getData = async () => {
       try {
         await postBag(newBag);
+        navigate(`/order/${id}`);
       } catch (error) {
         console.log(error);
       }
