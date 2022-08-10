@@ -2,11 +2,23 @@
 .center {
   text-align: center;
 }
+.remove-link {
+  text-decoration: none;
+  color: black;
+}
 .button {
   padding: 10px 20px;
   border: none;
   border-radius: 10px;
   font-size: 40px;
+  font-family: 'AAA-Prachid Hand Written Font';
+}
+.small-button {
+  height: 40px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
   font-family: 'AAA-Prachid Hand Written Font';
 }
 .text {
@@ -21,6 +33,33 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+.back-button {
+  font-size: 50px;
+  position: absolute;
+  right: 20%;
+  top: 100px;
+}
+
+body {
+  background-color: pink;
+}
+
+.container {
+  font-family: 'AAA-Prachid Hand Written Font';
+  display: flex;
+  flex-direction: column;
+  flex-direction: space-around;
+  align-items: center;
+  width: 90%;
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.443);
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px #00000031;
+}
+.heading {
+  font-size: 80px;
+  margin: 20px;
 }
 
 /* BAG FACTORY */
@@ -41,7 +80,9 @@
 
 .factory {
   margin-top: 100px;
+  font-family: 'AAA-Prachid Hand Written Font';
 }
+
 .box {
   border: 2px dashed black;
   width: 100%;
@@ -68,10 +109,6 @@
 
 .hover:hover {
   transform: scale(1.1);
-}
-.factory,
-.background {
-  font-family: 'AAA-Prachid Hand Written Font';
 }
 .name-text {
   top: 380px;
@@ -240,14 +277,8 @@
 
 /* my order page */
 .order-page {
-  display: flex;
-  flex-direction: column;
-  border: 2px solid black;
-  width: 70%;
   height: 650px;
   margin: 50px auto;
-  border-radius: 10px;
-  align-items: center;
 }
 .order-title {
   font-size: 80px;
@@ -352,7 +383,7 @@
   transition-timing-function: cubic-bezier(10, 2, 3, 1);
   transform: translateX(-100rem);
   top: 0;
-  z-index: 0;
+  z-index: 1;
   transition: 0.5s;
 }
 #menyAvPaa {
@@ -393,13 +424,11 @@
   transform: translateY(-15px) rotate(-45deg);
 }
 /* my orders */
-.my-orders {
-  text-align: center;
-}
-.my-orders h1 {
-  font-family: 'AAA-Prachid Hand Written Font';
+.my-orders-button {
+  margin: 30px;
 }
 .my-orders-box {
+  text-align: center;
   border: 2px dashed black;
   border-radius: 5px;
   width: 90%;
@@ -407,4 +436,54 @@
   padding: 20px;
   display: flex;
   justify-content: space-around;
+}
+.each-order {
+  text-decoration: none;
+  color: black;
+}
+.order-complete {
+  font-size: 20px;
+}
+/* customer-orders */
+.order-tab-container {
+  width: 90%;
+}
+.order-tabs {
+  background-color: pink;
+  margin: 0;
+  height: 50px;
+  font-size: 35px;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  border-radius: 15px 15px 0 0;
+}
+.react-tabs__tab--selected {
+  background-color: white;
+  border-radius: 15px 15px 0 0;
+}
+.each-order-tab {
+  width: 16%;
+  text-align: center;
+}
+
+.tab-panel-background {
+  text-align: center;
+  background-color: white;
+  padding-top: 20px;
+  height: 600px;
+}
+.customer-order-details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px dashed gray;
+  background-color: white;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+}
+.customer-order-details p {
+  margin: 10px;
 }

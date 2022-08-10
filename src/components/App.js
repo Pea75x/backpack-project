@@ -9,6 +9,7 @@ import Register from './Register';
 import Order from './Order';
 import NavBar from './NavBar';
 import MyOrders from './MyOrders';
+import CustomerOrders from './CustomerOrders';
 
 const App = () => (
   <BrowserRouter>
@@ -21,6 +22,7 @@ const App = () => (
       <Route path='/register' element={<Register />} />
       <Route path='/order/:id' element={<Order />} />
       <Route path='/myorders/:id' element={<MyOrders />} />
+      <Route path='/customer-orders' element={<CustomerOrders />} />
     </Routes>
   </BrowserRouter>
 );

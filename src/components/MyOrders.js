@@ -1,6 +1,8 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { getOrderByUser, createOrder } from '../api/bags';
+import dateFormat from 'dateformat';
+import bag from '../media/bag-body.svg';
 
 function MyOrders() {
   const [orders, setOrders] = React.useState([]);
@@ -47,18 +49,23 @@ function MyOrders() {
   }
 
   return (
-    <div className='my-orders'>
+    <div className='container'>
       <h1 className='title'>my orders</h1>
       {orders.length > 0 ? (
         <div className='my-orders-box'>
           {orders.map((order) => (
-            <div className='each-order'>
-              <h1>{order.id}</h1>
-              <h1>{order.created_date}</h1>
-              <h1>
-                {order.order_status.filter((orderstatus) => Math.max(order.))}
+            <Link to={`/order/${order.id}`} className='each-order'>
+              <h1 className='text'>order no. {order.id}</h1>
+              <img src={bag} alt='bag' width='100px' />
+              <h1 className='text'>
+                {dateFormat(order.created_date, 'dddd, mmmm dS')}
               </h1>
-            </div>
+              {order.order_status.length ? (
+                <h1 className='text order-complete'>Order Complete</h1>
+              ) : (
+                <h1 className='text order-complete'>Incomplete order</h1>
+              )}
+            </Link>
           ))}
         </div>
       ) : (
@@ -66,7 +73,7 @@ function MyOrders() {
           <h1 className='my-orders-box'>You have no orders</h1>
         </div>
       )}
-      <button className='button hover' onClick={newOrder}>
+      <button className='button hover my-orders-button' onClick={newOrder}>
         Create New Order
       </button>
     </div>

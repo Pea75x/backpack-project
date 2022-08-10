@@ -20,8 +20,6 @@ function OrderStatus(orderStatus) {
     return answer;
   }
 
-  // console.log(orderStatusArray);
-
   return (
     <div className='order-status-box'>
       <div className='status-meter-end left-end' id='complete'></div>
@@ -46,7 +44,10 @@ function OrderStatus(orderStatus) {
           )}
         </div>
       ))}
-      <div className='status-meter-end right-end' id='not-complete'></div>
+      <div
+        className='status-meter-end right-end'
+        id={isStatus('delivered').length ? 'complete' : 'not-complete'}
+      ></div>
     </div>
   );
 }

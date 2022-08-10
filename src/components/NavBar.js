@@ -60,7 +60,11 @@ function NavBar() {
                     Stock
                   </Link>
                 </li>
-                <li>Customer Orders</li>
+                <li>
+                  <Link to='/customer-orders' onClick={menuOpen}>
+                    Customer Orders
+                  </Link>
+                </li>
               </div>
             )}
 

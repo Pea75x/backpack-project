@@ -4,9 +4,14 @@ import { getOrderById, postStatus } from '../api/bags';
 import bagBody from '../media/bag-body.svg';
 import BagImage from './BagImage';
 import OrderStatus from './OrderStatus';
+import { TiArrowBack } from 'react-icons/ti';
+import { getLoggedInUserId } from '../api/auth';
+import { isAdmin } from '../api/auth';
 
 function Order() {
   const [order, setOrder] = React.useState(null);
+  const [userId, setUserId] = React.useState(getLoggedInUserId());
+
   const { id } = useParams();
   const [update, setUpdate] = React.useState(false);
   const confirmOrder = {
@@ -41,9 +46,12 @@ function Order() {
 
   console.log(order);
   return (
-    <div className='background'>
+    <div>
+      <Link to={isAdmin() ? `/customer-orders` : `/myorders/${userId}`}>
+        <TiArrowBack className='back-button hover remove-link' />
+      </Link>
       {order ? (
-        <div className='order-page'>
+        <div className='order-page container'>
           {/* title */}
           <div className='order-title'>order no: {order.id}</div>
           {/* box with bag items */}

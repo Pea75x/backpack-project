@@ -37,7 +37,7 @@ export const getBagById = async (id) => {
 export const getOrders = async () => {
   const options = {
     method: 'GET',
-    url: `${baseUrl}/orders/`
+    url: `${baseUrl}/populatedorders/`
   };
   const { data } = await axios.request(options);
   return data;
