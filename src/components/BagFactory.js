@@ -88,8 +88,8 @@ function BagFactory() {
   console.log('new Bag: ', newBag);
 
   return (
-    <div className='factory'>
-      <p className='title'>Bag Factory</p>
+    <div className='container'>
+      <p className='factory-title'>Bag Factory</p>
       <div className='box flex-center'>
         <div className='bag-images'>
           {/* chose fabric icons */}
@@ -98,13 +98,13 @@ function BagFactory() {
               key={part.name}
               className={`moving-box flex-center hover ${
                 part.image ? 'done' : 'notDone'
-              } ${partName == part.code ? 'clicked-part' : ''}`}
+              } ${partName == part.code ? 'clicked-part' : 'not-clicked'}`}
               id={part.code}
               onClick={() => clickPart(part.code)}
             >
-              <p className='moving-box-p'>{part.name}</p>
+              <p className='text'>{part.name}</p>
               {partName == part.code ? (
-                <div className='flex-center'>
+                <div className='flex-center moving-box-circle-container'>
                   {partInfo.map((part) => (
                     <img
                       key={part.name}
@@ -125,13 +125,13 @@ function BagFactory() {
           {parts.map((part) => (
             <img src={part.image} alt={part.name} className='bag-part' />
           ))}
-          <p className={`bag-part name-text ${textColor}`}>{newBag.name}</p>
+          <p className={`name-text ${textColor}`}>{newBag.name}</p>
           <img src={bag} alt='bag' className='bag-part' />
         </div>
         {/* FINAL TOUCHES BOX */}
         <div className='final-touches'>
           <div className='flex-center add-name'>
-            <h3>Add a name (optional):</h3>
+            <h3 className='text'>Add a name (optional):</h3>
             <input onChange={addName} className='input-textbox' />
             <div className='radio-buttons'>
               <div>

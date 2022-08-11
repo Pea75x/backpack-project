@@ -56,13 +56,16 @@ body {
   background-color: rgba(255, 255, 255, 0.443);
   border-radius: 10px;
   box-shadow: 10px 10px 15px #00000031;
+  z-index: -1;
 }
 .heading {
   font-size: 80px;
   margin: 20px;
 }
 
-/* BAG FACTORY */
+.hover:hover {
+  transform: scale(1.1);
+}
 @font-face {
   font-family: 'Mas Pendi Wow Font';
   font-style: normal;
@@ -78,121 +81,138 @@ body {
     url('./media/AaaPrachidHandWritten-0Km9.ttf') format('truetype');
 }
 
-.factory {
-  margin-top: 100px;
+/* BAG FACTORY */
+.factory-title {
+  font-size: 80px;
+  margin: 0px;
   font-family: 'AAA-Prachid Hand Written Font';
 }
-
 .box {
-  border: 2px dashed black;
   width: 100%;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 30px;
 }
 .bag-images {
   width: 50%;
-  height: 650px;
-  border: 1px dashed black;
+  height: 500px;
   display: flex;
   justify-content: center;
 }
-
-.bag-part {
-  width: 600px;
+.moving-box {
   position: absolute;
-  pointer-events: none;
-  z-index: -10;
+  padding: 5px;
+  border-radius: 20px;
+  font-size: 20px;
+  flex-direction: column;
+  height: 100px;
+  font-size: 50px;
+  line-height: 20px;
+  z-index: 2;
+}
+.done {
+  font-weight: lighter;
+}
+.notDone {
+  font-weight: bold;
+}
+.moving-box-circle-container {
+  max-width: 250px;
+  overflow: auto;
+  display: flex;
+  justify-content: left;
+}
+.clicked-part {
+  background-color: rgba(204, 200, 200, 0.9);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.208);
+}
+.not-clicked.notDone {
+  animation: pulse 2s ease infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+#pocket {
+  left: 67%;
+  top: 100px;
+}
+#front {
+  left: 72%;
+  top: 210px;
+}
+#heart {
+  left: 73%;
+  top: 320px;
+}
+#lining {
+  left: 70%;
+  top: 430px;
+}
+#strap {
+  left: 68%;
+  top: 540px;
+}
+
+#zip {
+  right: 67%;
+  top: 100px;
+}
+#bottom {
+  right: 72%;
+  top: 210px;
+}
+#side_strap {
+  right: 73%;
+  top: 320px;
+}
+#clasps {
+  right: 70%;
+  top: 430px;
+}
+#top {
+  right: 68%;
+  top: 540px;
+}
+
+.name-text {
+  text-align: center;
+  top: 260px;
+  left: 47.5%;
+  /* border: 3px dashed pink; */
+  width: 140px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 35px;
+  position: absolute;
+  z-index: 0;
 }
 .fabric-circle {
   width: 50px;
   border-radius: 50%;
   padding: 4px;
 }
-
-.hover:hover {
-  transform: scale(1.1);
+.bag-part {
+  width: 500px;
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
 }
-.name-text {
-  top: 380px;
-  left: 30.5%;
-  border: 3px dashed pink;
-  width: 140px;
-  height: 30px;
-  line-height: 30px;
-  font-size: 40px;
-}
-.moving-box {
-  position: relative;
-  padding: 5px;
-  border-radius: 10px;
-  font-size: 20px;
-  flex-direction: column;
-  height: 100px;
-  font-size: 50px;
-  line-height: 20px;
+.add-name {
+  border-radius: 5px;
+  margin: 20px;
+  padding: 10px;
+  font-size: 30px;
+  background-color: pink;
 }
 
-.moving-box-p {
-  margin: 0;
-}
-.done {
-  font-weight: lighter;
-  color: grey;
-}
-.clicked-part {
-  background-color: rgba(204, 200, 200, 0.9);
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.208);
-}
-.notDone {
-  font-weight: bold;
-}
-
-#front {
-  left: 800px;
-  top: 40px;
-}
-
-#bottom {
-  right: 0;
-}
-
-#pocket {
-  right: 200px;
-  bottom: 130px;
-}
-
-#zip {
-  right: 240px;
-  bottom: 150px;
-}
-
-#heart {
-  left: 150px;
-  top: 210px;
-}
-
-#lining {
-  left: 310px;
-  top: 380px;
-}
-
-#top {
-  top: 480px;
-  left: 150px;
-}
-#strap {
-  top: 540px;
-  left: 400px;
-}
-#clasps {
-  top: 350px;
-  right: 830px;
-}
-#bottom {
-  bottom: 50px;
-}
-#side_strap {
-  right: 270px;
-  top: 140px;
-}
 .black {
   color: black;
 }
@@ -201,15 +221,6 @@ body {
 }
 .radio-buttons {
   display: flex;
-}
-
-.add-name {
-  flex-direction: column;
-  padding: 40px;
-  font-size: 30px;
-}
-.add-name h3 {
-  margin: 0;
 }
 .input-textbox {
   font-size: 20px;
@@ -383,7 +394,7 @@ body {
   transition-timing-function: cubic-bezier(10, 2, 3, 1);
   transform: translateX(-100rem);
   top: 0;
-  z-index: 1;
+  z-index: 3;
   transition: 0.5s;
 }
 #menyAvPaa {
