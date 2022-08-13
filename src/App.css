@@ -233,26 +233,38 @@ body {
   text-align: center;
 }
 .fabric-box {
-  border: 2px solid black;
-  margin: 40px;
+  background-color: rgba(255, 255, 255, 0.443);
+  box-shadow: 10px 10px 15px #00000031;
+  border-radius: 10px;
   width: 90%;
+  margin-bottom: 40px;
+}
+.fabric-box h2 {
+  font-family: 'AAA-Prachid Hand Written Font';
+  font-size: 50px;
+  margin: 0;
 }
 .fabric-rows {
   justify-content: space-around;
   flex-wrap: wrap;
+  margin: 0 20px 20px 20px;
+  height: 350px;
+  overflow: auto;
+  background-color: rgba(255, 192, 203, 0.588);
 }
 .fabric-square {
   width: 200px;
-  /* margin: 30px; */
+  margin: 5px;
+  border-radius: 50%;
 }
 .fabric-form {
   margin: 20px;
   flex-direction: column;
 }
 .fabric-input {
-  font-size: 20px;
+  font-size: 25px;
   text-align: center;
-
+  font-family: 'AAA-Prachid Hand Written Font';
   margin: 5px;
   width: 250px;
   height: 30px;
@@ -334,6 +346,9 @@ body {
   font-family: 'Courier New', Courier, monospace;
   font-size: 25px;
 }
+.order-button {
+  margin: 20px;
+}
 /* order status */
 .order-status-box {
   display: flex;
@@ -367,6 +382,7 @@ body {
 #not-complete {
   background-color: #f5d9d9;
 }
+
 /* NAVBAR */
 .navbar-list {
   text-align: center;
@@ -387,6 +403,8 @@ body {
 }
 #meny {
   background: rgba(43, 43, 43, 0.9);
+  /* background-image: url('https://img.freepik.com/free-vector/pink-color-watercolor-background_125540-1216.jpg?w=2000');
+  opacity: 0.5; */
   width: 100rem;
   height: 100vh;
   position: fixed;
@@ -497,4 +515,40 @@ body {
 }
 .customer-order-details p {
   margin: 10px;
+}
+/* register /login */
+.form {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 40px;
+}
+.field {
+  display: flex;
+  align-items: center;
+}
+.label {
+  width: 300px;
+  text-align: right;
+  padding: 5px;
+}
+.input {
+  width: 250px;
+  line-height: 30px;
+  margin-left: 10px;
+}
+.login-submit {
+  margin: 20px;
+}
+/* home */
+.home-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.bag-gif {
+  width: 600px;
+  background-color: #f9dbe1;
+  margin: 50px;
+  /* box-shadow: 10px 10px 15px #00000031; */
 }

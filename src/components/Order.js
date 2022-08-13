@@ -86,9 +86,16 @@ function Order() {
           ) : (
             <div>
               <Link to={`/create/${id}`}>
-                <button>Create new bag</button>
+                <button className='button hover order-button'>
+                  Create new bag
+                </button>
               </Link>
-              <button onClick={purchaseOrder}>Purchase Order</button>
+              <button
+                className='button hover order-button'
+                onClick={purchaseOrder}
+              >
+                Purchase Order
+              </button>
             </div>
           )}
         </div>

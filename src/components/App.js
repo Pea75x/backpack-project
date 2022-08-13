@@ -10,11 +10,13 @@ import Order from './Order';
 import NavBar from './NavBar';
 import MyOrders from './MyOrders';
 import CustomerOrders from './CustomerOrders';
+import Home from './Home';
 
 const App = () => (
   <BrowserRouter>
     <NavBar />
     <Routes>
+      <Route path='/' element={<Home />} />
       <Route path='/create/:id' element={<BagFactory />} />
       <Route path='/stock' element={<StockPage />} />
       <Route path='/fabric/:id' element={<Products />} />

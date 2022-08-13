@@ -30,12 +30,10 @@ function Login() {
   }
 
   return (
-    <div className='background'>
-      <div className='square'>
-        <div className='top-heading'>
-          <h1 className='my-title'>Login</h1>
-        </div>
-        <form className='my-form' onSubmit={handleSubmit}>
+    <div>
+      <div className='container'>
+        <h1 className='title'>Login</h1>
+        <form className='form' onSubmit={handleSubmit}>
           <div className='field'>
             <label htmlFor='email' className='label'>
               Email
@@ -69,12 +67,12 @@ function Login() {
             </div>
           </div>
           <p className='error'>{errorMessage}</p>
-          <button type='submit' className='button-style'>
+          <button type='submit' className='button hover'>
             Login
           </button>
           <p>
             Dont have an account?
-            <a className='link' href='/register'>
+            <a className='black' href='/register'>
               Register now
             </a>
           </p>

@@ -1,5 +1,5 @@
 import axios from 'axios';
-const baseUrl = 'https://mybackpackapp.herokuapp.com';
+import { baseUrl } from '../config';
 
 export const registerUser = async (user) => {
   const options = {

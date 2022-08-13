@@ -63,8 +63,8 @@ function StockPage() {
 
   if (fabrics) {
     return (
-      <div className='stock-page .flex-center'>
-        <h1>Fabric</h1>
+      <div className='stock-page flex-center'>
+        <h1 className='title'>Fabric</h1>
         <div className='fabric-box'>
           <h2>All fabric</h2>
           <div className='fabric-rows flex-center'>
@@ -81,19 +81,25 @@ function StockPage() {
           </div>
         </div>
         <div className='fabric-box'>
-          <h2>add new fabric</h2>
+          <h2>Add new fabric</h2>
           <form className='fabric-form flex-center' onSubmit={handleSubmit}>
             <input
-              placeholder='name'
+              placeholder='Name'
               name='name'
               onChange={handleChange}
               value={newFabric.name}
               className='fabric-input'
             />
-            <button onClick={handleUpload} className='fabric-input'>
+            <button
+              onClick={handleUpload}
+              className='small-button hover fabric-input'
+            >
               {imageUpload}
             </button>
-            <button type='submit' className='fabric-input fabric-submit'>
+            <button
+              type='submit'
+              className='fabric-input small-button hover fabric-submit'
+            >
               Add
             </button>
           </form>

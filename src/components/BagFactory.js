@@ -122,9 +122,13 @@ function BagFactory() {
           ))}
 
           {/* BAG DIAGRAM IMAGES */}
-          {parts.map((part) => (
-            <img src={part.image} alt={part.name} className='bag-part' />
-          ))}
+          {parts.map((part) =>
+            part.image ? (
+              <img src={part.image} alt={part.name} className='bag-part' />
+            ) : (
+              <div></div>
+            )
+          )}
           <p className={`name-text ${textColor}`}>{newBag.name}</p>
           <img src={bag} alt='bag' className='bag-part' />
         </div>

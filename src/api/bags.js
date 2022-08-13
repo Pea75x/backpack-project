@@ -1,6 +1,5 @@
 import axios from 'axios';
-const baseUrl = 'https://mybackpackapp.herokuapp.com';
-
+import { baseUrl } from '../config';
 // BAGS
 export const getBags = async () => {
   const options = {

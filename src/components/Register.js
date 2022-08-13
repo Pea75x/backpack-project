@@ -36,13 +36,11 @@ function Register() {
   }
 
   return (
-    <div className='background'>
-      <div className='square'>
-        <div className='top-heading'>
-          <h1 className='my-title'>Register</h1>
-        </div>
-        <p>{errorMessage}</p>
-        <form className='reg-form' onSubmit={handleSubmit}>
+    <div className='container'>
+      <h1 className='title'>Register</h1>
+      <p>{errorMessage}</p>
+      <form className='form' onSubmit={handleSubmit}>
+        <div className='field'>
           <label className='label'>Username</label>
           <div className='control'>
             <input
@@ -53,6 +51,8 @@ function Register() {
               value={user.username}
             />
           </div>
+        </div>
+        <div className='field'>
           <label className='label'>Email</label>
           <div className='control'>
             <input
@@ -63,7 +63,8 @@ function Register() {
               value={user.email}
             />
           </div>
-
+        </div>
+        <div className='field'>
           <label className='label'>Address 1</label>
           <div className='control'>
             <input
@@ -73,7 +74,9 @@ function Register() {
               value={user.address1}
             />
           </div>
+        </div>
 
+        <div className='field'>
           <label className='label'>Address 2</label>
           <div className='control'>
             <input
@@ -83,6 +86,8 @@ function Register() {
               value={user.address2}
             />
           </div>
+        </div>
+        <div className='field'>
           <label className='label'>Postcode</label>
           <div className='control'>
             <input
@@ -92,7 +97,8 @@ function Register() {
               value={user.postcode}
             />
           </div>
-
+        </div>
+        <div className='field'>
           <label className='label'>Password</label>
           <div className='control'>
             <input
@@ -104,7 +110,9 @@ function Register() {
               value={user.password}
             />
           </div>
+        </div>
 
+        <div className='field'>
           <label className='label'>Password Confirmation</label>
           <div className='control'>
             <input
@@ -116,14 +124,12 @@ function Register() {
               value={user.password_confirmation}
             />
           </div>
+        </div>
 
-          <div className='field'>
-            <button type='submit' className='button-style register'>
-              Register Me!
-            </button>
-          </div>
-        </form>
-      </div>
+        <button type='submit' className='button login-submit hover'>
+          Register Me!
+        </button>
+      </form>
     </div>
   );
 }
