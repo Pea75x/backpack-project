@@ -516,6 +516,10 @@ body {
 .customer-order-details p {
   margin: 10px;
 }
+.clicktoview {
+  font-size: 35px;
+  height: 400px;
+}
 /* register /login */
 .form {
   text-align: center;

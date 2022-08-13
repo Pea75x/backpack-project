@@ -10,7 +10,7 @@ const updateTemplate = {
 
 function CustomerOrders() {
   const [allOrders, setAllOrders] = React.useState([]);
-  const [filteredOrders, setFilteredOrders] = React.useState(null);
+  const [filteredOrders, setFilteredOrders] = React.useState('clicktoview');
   const [update, setUpdate] = React.useState(false);
   const [nextStatus, setNextStatus] = React.useState('');
   const [createUpdate, setCreateUpdate] = React.useState(updateTemplate);
@@ -29,7 +29,6 @@ function CustomerOrders() {
       try {
         const orderData = await getOrders();
         setAllOrders(orderData);
-        filterOrderByStatus('pending');
       } catch (err) {
         console.log('order info error - ', err);
       }
@@ -92,7 +91,8 @@ function CustomerOrders() {
     getData();
   }
 
-  console.log(createUpdate);
+  console.log('all orders', allOrders);
+
   return (
     <div className='background'>
       <div className='container'>
@@ -113,30 +113,36 @@ function CustomerOrders() {
             <div className='tab-panel-background'>
               {status.map((update) => (
                 <TabPanel className='tab-panel'>
-                  {filteredOrders.map((order) => (
-                    <div
-                      key={order.id}
-                      className='customer-order-details hover'
-                      onClick={() => clickOnOrder(nextStatus, order.id)}
-                    >
-                      <p>order no. {order.id}</p>
-                      <p>items: {order.items.length}</p>
-                      {nextStatus && createUpdate.order_id == order.id ? (
-                        <button
-                          className='small-button'
-                          onClick={postUpdate}
+                  {filteredOrders != 'clicktoview' ? (
+                    filteredOrders.map((order) => (
+                      <div
+                        key={order.id}
+                        className='customer-order-details hover'
+                        onClick={() => clickOnOrder(nextStatus, order.id)}
+                      >
+                        <p>order no. {order.id}</p>
+                        <p>items: {order.items.length}</p>
+                        {nextStatus && createUpdate.order_id == order.id ? (
+                          <button
+                            className='small-button'
+                            onClick={postUpdate}
 
-                          // onClick={sendNewUpdate}
-                        >
-                          send to {nextStatus}
-                        </button>
-                      ) : (
-                        <Link to={`/order/${order.id}`}>
-                          <button className='small-button'>View Order</button>
-                        </Link>
-                      )}
+                            // onClick={sendNewUpdate}
+                          >
+                            send to {nextStatus}
+                          </button>
+                        ) : (
+                          <Link to={`/order/${order.id}`}>
+                            <button className='small-button'>View Order</button>
+                          </Link>
+                        )}
+                      </div>
+                    ))
+                  ) : (
+                    <div className='clicktoview flex-center'>
+                      <p>Please click on a status to view orders</p>
                     </div>
-                  ))}
+                  )}
                 </TabPanel>
               ))}
             </div>
