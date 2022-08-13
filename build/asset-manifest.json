@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.073c9b0a.css",
-    "main.js": "/static/js/main.f46a8059.js",
-    "static/js/787.a6701e4c.chunk.js": "/static/js/787.a6701e4c.chunk.js",
-    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.css": "/static/css/main.1790a8cf.css",
+    "main.js": "/static/js/main.f46011dd.js",
+    "static/media/bag-gif.gif": "/static/media/bag-gif.5638820a4c411e8ad638.gif",
+    "static/media/AaaPrachidHandWritten-0Km9.ttf": "/static/media/AaaPrachidHandWritten-0Km9.2f805f518ff4453163d7.ttf",
+    "static/media/MasPendiWow-qZK90.ttf": "/static/media/MasPendiWow-qZK90.67fd0fa8d937f73d232c.ttf",
+    "static/media/bag-body.svg": "/static/media/bag-body.ddd86f230f7bf4808d697b3bd6189283.svg",
     "index.html": "/index.html",
-    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
-    "main.f46a8059.js.map": "/static/js/main.f46a8059.js.map",
-    "787.a6701e4c.chunk.js.map": "/static/js/787.a6701e4c.chunk.js.map"
+    "main.1790a8cf.css.map": "/static/css/main.1790a8cf.css.map",
+    "main.f46011dd.js.map": "/static/js/main.f46011dd.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.f46a8059.js"
+    "static/css/main.1790a8cf.css",
+    "static/js/main.f46011dd.js"
   ]
 }
