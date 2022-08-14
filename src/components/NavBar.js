@@ -29,55 +29,59 @@ function NavBar() {
   }
 
   return (
-    <div className='navbar-container'>
-      <input
-        type='checkbox'
-        id='menyAvPaa'
-        checked={menuOpen}
-        onChange={openMenu}
-      />
-      <label id='burger' for='menyAvPaa'>
-        <div></div>
-        <div></div>
-        <div></div>
-      </label>
-      <nav id='meny'>
-        {loggedIn ? (
-          <ul className='navbar-list'>
-            <li>
-              <Link to='/' onClick={menuOpen}>
-                Home
-              </Link>
-            </li>
-            {!isAdminState ? (
-              <Link to={`/myorders/${userId}`} onClick={menuOpen}>
-                <li>My orders</li>
-              </Link>
-            ) : (
-              <div>
+    <div>
+      {loggedIn && (
+        <div className='navbar-container'>
+          <input
+            type='checkbox'
+            id='menyAvPaa'
+            checked={menuOpen}
+            onChange={openMenu}
+          />
+          <label id='burger' for='menyAvPaa'>
+            <div></div>
+            <div></div>
+            <div></div>
+          </label>
+          <nav id='meny'>
+            {loggedIn ? (
+              <ul className='navbar-list'>
                 <li>
-                  <Link to='/stock' onClick={menuOpen}>
-                    Stock
+                  <Link to='/' onClick={menuOpen}>
+                    Home
                   </Link>
                 </li>
-                <li>
-                  <Link to='/customer-orders' onClick={menuOpen}>
-                    Customer Orders
+                {!isAdminState ? (
+                  <Link to={`/myorders/${userId}`} onClick={menuOpen}>
+                    <li>My orders</li>
                   </Link>
-                </li>
-              </div>
-            )}
+                ) : (
+                  <div>
+                    <li>
+                      <Link to='/stock' onClick={menuOpen}>
+                        Stock
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to='/customer-orders' onClick={menuOpen}>
+                        Customer Orders
+                      </Link>
+                    </li>
+                  </div>
+                )}
 
-            <li onClick={logout}>Logout</li>
-          </ul>
-        ) : (
-          <ul className='navbar-list'>
-            <Link to='/login' onClick={menuOpen}>
-              Login
-            </Link>
-          </ul>
-        )}
-      </nav>
+                <li onClick={logout}>Logout</li>
+              </ul>
+            ) : (
+              <ul className='navbar-list'>
+                <Link to='/login' onClick={menuOpen}>
+                  Login
+                </Link>
+              </ul>
+            )}
+          </nav>
+        </div>
+      )}
     </div>
   );
 }

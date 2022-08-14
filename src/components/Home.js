@@ -1,9 +1,15 @@
 import React from 'react';
 import Bag from '../media/baggif.gif';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Home() {
   const loggedIn = window.sessionStorage.getItem('token');
+  const [logIn, setLogIn] = React.useState(loggedIn);
+  const location = useLocation();
+
+  React.useEffect(() => {
+    setLogIn(loggedIn);
+  }, [location]);
 
   return (
     <div className='flex-center'>
