@@ -42,7 +42,8 @@
 }
 
 body {
-  background-color: pink;
+  background-color: #f9dbe1;
+  margin: 0;
 }
 
 .container {
@@ -544,15 +545,58 @@ body {
   margin: 20px;
 }
 /* home */
-.home-div {
+.bag-gif {
+  width: 500px;
+  margin: 50px;
+}
+
+.flower-button {
+  height: 300px;
+  width: 300px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('./media/button.png');
+  position: absolute;
+  top: 50vh;
+  left: 60%;
+  transform: rotate(10deg);
+}
+
+.header-title {
+  position: absolute;
+  transform: rotate(-10deg);
+  top: 15px;
+  left: 20%;
+  padding: 0;
+  margin: auto;
+  font-size: 160px;
+  color: black;
+  font-family: 'AAA-Prachid Hand Written Font';
+}
+
+.homebag-container {
+  background-image: url('./media/backgoround.png');
+  background-size: contain;
+  width: 800px;
+  height: 700px;
+  background-position: end;
+  background-repeat: no-repeat;
+}
+.home-heart {
+  width: 350px;
+  height: 270px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-family: 'AAA-Prachid Hand Written Font';
+  position: absolute;
+  font-size: 60px;
+  text-align: center;
+  transform: rotate(20deg);
+  left: 18%;
+  top: 400px;
+}
+.flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-}
-.bag-gif {
-  width: 600px;
-  background-color: #f9dbe1;
-  margin: 50px;
-  /* box-shadow: 10px 10px 15px #00000031; */
 }

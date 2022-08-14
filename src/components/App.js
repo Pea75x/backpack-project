@@ -12,9 +12,11 @@ import MyOrders from './MyOrders';
 import CustomerOrders from './CustomerOrders';
 import Home from './Home';
 
+const loggedIn = window.sessionStorage.getItem('token');
+
 const App = () => (
   <BrowserRouter>
-    <NavBar />
+    {loggedIn && <NavBar />}
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/create/:id' element={<BagFactory />} />
