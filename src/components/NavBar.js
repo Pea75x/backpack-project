@@ -44,41 +44,33 @@ function NavBar() {
             <div></div>
           </label>
           <nav id='meny'>
-            {loggedIn ? (
-              <ul className='navbar-list'>
-                <li>
-                  <Link to='/' onClick={menuOpen}>
-                    Home
-                  </Link>
-                </li>
-                {!isAdminState ? (
-                  <Link to={`/myorders/${userId}`} onClick={menuOpen}>
-                    <li>My orders</li>
-                  </Link>
-                ) : (
-                  <div>
-                    <li>
-                      <Link to='/stock' onClick={menuOpen}>
-                        Stock
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to='/customer-orders' onClick={menuOpen}>
-                        Customer Orders
-                      </Link>
-                    </li>
-                  </div>
-                )}
-
-                <li onClick={logout}>Logout</li>
-              </ul>
-            ) : (
-              <ul className='navbar-list'>
-                <Link to='/login' onClick={menuOpen}>
-                  Login
+            <ul className='navbar-list'>
+              <li>
+                <Link to='/' onClick={menuOpen}>
+                  Home
                 </Link>
-              </ul>
-            )}
+              </li>
+              {!isAdminState ? (
+                <Link to={`/myorders/${userId}`} onClick={menuOpen}>
+                  <li>My orders</li>
+                </Link>
+              ) : (
+                <div>
+                  <li>
+                    <Link to='/stock' onClick={menuOpen}>
+                      Stock
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/customer-orders' onClick={menuOpen}>
+                      Customer Orders
+                    </Link>
+                  </li>
+                </div>
+              )}
+
+              <li onClick={logout}>Logout</li>
+            </ul>
           </nav>
         </div>
       )}
