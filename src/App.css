@@ -55,8 +55,8 @@ body {
   width: 90%;
   margin: 30px auto;
   background-color: rgba(255, 255, 255, 0.443);
-  border-radius: 10px;
-  box-shadow: 10px 10px 15px #00000031;
+  border-radius: 20px;
+  box-shadow: inset 0px 0px 15px #00000031;
   z-index: -1;
 }
 .heading {
@@ -235,7 +235,7 @@ body {
 }
 .fabric-box {
   background-color: rgba(255, 255, 255, 0.443);
-  box-shadow: 10px 10px 15px #00000031;
+  box-shadow: inset 0px 0px 15px #00000031;
   border-radius: 10px;
   width: 90%;
   margin-bottom: 40px;
