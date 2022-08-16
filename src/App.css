@@ -336,8 +336,12 @@ body {
   margin: auto;
 }
 .order-details {
-  padding: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
 }
+
 .order-details h2 {
   font-size: 35px;
   text-align: center;

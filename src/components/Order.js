@@ -10,7 +10,7 @@ import { isAdmin } from '../api/auth';
 
 function Order() {
   const [order, setOrder] = React.useState(null);
-  const [userId, setUserId] = React.useState(getLoggedInUserId());
+  const userId = getLoggedInUserId();
 
   const { id } = useParams();
   const [update, setUpdate] = React.useState(false);
@@ -69,16 +69,24 @@ function Order() {
           </div>
           {/* order details */}
           <div className='order-details'>
-            <h2>Total items: {order.items.length}</h2>
-            <h2>
-              Order price:
-              <span className='symbols'>
-                £
-                {order.items?.reduce((total, curr) => {
-                  return total + parseFloat(curr.price);
-                }, 0)}
-              </span>
-            </h2>
+            <div className='order-details-column'>
+              <h2>Total items: {order.items.length}</h2>
+              <h2>
+                Order price:
+                <span className='symbols'>
+                  £
+                  {order.items?.reduce((total, curr) => {
+                    return total + parseFloat(curr.price);
+                  }, 0)}
+                </span>
+              </h2>
+            </div>
+            <div className='order-details-column'>
+              <h2>Delivery address:</h2>
+              <h2>{order.customer_id.address1}</h2>
+              <h2>{order.customer_id.address2}</h2>
+              <h2>{order.customer_id.postcode}</h2>
+            </div>
           </div>
           {/* order status */}
           {order.order_status.length > 0 ? (
