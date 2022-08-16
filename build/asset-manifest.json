@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.018faa68.css",
-    "main.js": "/static/js/main.20ddcf31.js",
+    "main.css": "/static/css/main.763769fe.css",
+    "main.js": "/static/js/main.c9f57843.js",
     "static/media/baggif.gif": "/static/media/baggif.6b7779deb7497fad855d.gif",
     "static/media/AaaPrachidHandWritten-0Km9.ttf": "/static/media/AaaPrachidHandWritten-0Km9.2f805f518ff4453163d7.ttf",
     "static/media/backgoround.png": "/static/media/backgoround.cd59a8bd91c583088eef.png",
@@ -9,11 +9,11 @@
     "static/media/MasPendiWow-qZK90.ttf": "/static/media/MasPendiWow-qZK90.67fd0fa8d937f73d232c.ttf",
     "static/media/bag-body.svg": "/static/media/bag-body.ddd86f230f7bf4808d697b3bd6189283.svg",
     "index.html": "/index.html",
-    "main.018faa68.css.map": "/static/css/main.018faa68.css.map",
-    "main.20ddcf31.js.map": "/static/js/main.20ddcf31.js.map"
+    "main.763769fe.css.map": "/static/css/main.763769fe.css.map",
+    "main.c9f57843.js.map": "/static/js/main.c9f57843.js.map"
   },
   "entrypoints": [
-    "static/css/main.018faa68.css",
-    "static/js/main.20ddcf31.js"
+    "static/css/main.763769fe.css",
+    "static/js/main.c9f57843.js"
   ]
 }
