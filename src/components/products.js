@@ -5,10 +5,6 @@ import {
   getProductByFabric,
   postProduct
 } from '../api/products';
-import bag from '../media/bag-body.svg';
-// import bottom from '../media/bottom.png';
-// import top from '../media/top.png';
-// import front from '../media/front.png';
 
 function Products() {
   const { id } = useParams();
@@ -24,7 +20,6 @@ function Products() {
   const [newProduct, setNewProduct] = React.useState(blankProduct);
   const [create, setCreate] = React.useState(null);
   const [update, setUpdate] = React.useState(false);
-  const [bagImage, setBagImage] = React.useState(null);
 
   const parts = [
     'front',
@@ -72,7 +67,6 @@ function Products() {
         id: partInfo.id,
         name: partInfo.name
       });
-      setBagImage(part);
     } else {
       setCreate(true);
       setNewProduct({
