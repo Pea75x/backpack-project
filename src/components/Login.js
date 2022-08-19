@@ -66,7 +66,7 @@ function Login() {
               ></input>
             </div>
           </div>
-          <p className='error'>{errorMessage}</p>
+          <p className='error text'>{errorMessage}</p>
           <button type='submit' className='button hover'>
             Login
           </button>

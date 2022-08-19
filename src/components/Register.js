@@ -36,9 +36,9 @@ function Register() {
   }
 
   return (
-    <div className='container'>
+    <div className='container overflow-container'>
       <h1 className='title'>Register</h1>
-      <p>{errorMessage}</p>
+      <p className='error text'>{errorMessage}</p>
       <form className='form' onSubmit={handleSubmit}>
         <div className='field'>
           <label className='label'>Username</label>

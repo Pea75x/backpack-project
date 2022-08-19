@@ -53,7 +53,7 @@ function Order() {
       {order ? (
         <div className='order-page container'>
           {/* title */}
-          <div className='order-title'>order no: {order.id}</div>
+          <div className='title'>order no: {order.id}</div>
           {/* box with bag items */}
           <div className='orders-container'>
             {order.items.map((bag) => (
@@ -94,14 +94,9 @@ function Order() {
           ) : (
             <div>
               <Link to={`/create/${id}`}>
-                <button className='button hover order-button'>
-                  Create new bag
-                </button>
+                <button className='medium-button hover '>Create new bag</button>
               </Link>
-              <button
-                className='button hover order-button'
-                onClick={purchaseOrder}
-              >
+              <button className='medium-button hover ' onClick={purchaseOrder}>
                 Purchase Order
               </button>
             </div>

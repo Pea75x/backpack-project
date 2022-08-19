@@ -30,13 +30,12 @@ function MyOrders() {
     const getData = async () => {
       try {
         const data = await createOrder(customerOrderId);
-        setNewOrderInfo(data);
+        await setNewOrderInfo(data);
       } catch (error) {
         console.log(error);
       }
     };
-    getData();
-    navigate(`/order/${newOrderInfo.id}`);
+    getData().then(navigate(`/order/${newOrderInfo.id}`));
   }
   function findLatestUpdate(orderstatus) {
     let latestStatus = orderstatus[0];
@@ -69,8 +68,8 @@ function MyOrders() {
           ))}
         </div>
       ) : (
-        <div>
-          <h1 className='my-orders-box'>You have no orders</h1>
+        <div className='my-orders-box'>
+          <h1 className='no-orders'>You have no orders</h1>
         </div>
       )}
       <button className='button hover my-orders-button' onClick={newOrder}>

@@ -82,20 +82,21 @@ function StockPage() {
         </div>
         <div className='fabric-box'>
           <h2>Add new fabric</h2>
-          <form className='fabric-form flex-center' onSubmit={handleSubmit}>
+          <form className='fabric-form' onSubmit={handleSubmit}>
             <input
               placeholder='Name'
               name='name'
               onChange={handleChange}
               value={newFabric.name}
-              className='fabric-input'
+              className='fabric-input small-button'
             />
             <button
               onClick={handleUpload}
-              className='small-button hover fabric-input'
+              className='fabric-input small-button hover '
             >
               {imageUpload}
             </button>
+
             <button
               type='submit'
               className='fabric-input small-button hover fabric-submit'

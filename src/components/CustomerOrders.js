@@ -95,8 +95,8 @@ function CustomerOrders() {
 
   return (
     <div className='background'>
-      <div className='container'>
-        <h1 className='heading'>Customer orders</h1>
+      <div className='container overflow-container'>
+        <h1 className='title'>Customer orders</h1>
 
         {filteredOrders ? (
           <Tabs className='order-tab-container'>

@@ -30,8 +30,9 @@ function NavBar() {
 
   return (
     <div>
+      <h1 className='home-title'>Bag Factory</h1>
       {loggedIn && (
-        <div className='navbar-container'>
+        <div>
           <input
             type='checkbox'
             id='menyAvPaa'

@@ -89,81 +89,78 @@ function BagFactory() {
 
   return (
     <div className='container'>
-      <p className='factory-title'>Bag Factory</p>
-      <div className='box flex-center'>
-        <div className='bag-images'>
-          {/* chose fabric icons */}
-          {parts.map((part) => (
-            <div
-              key={part.name}
-              className={`moving-box flex-center hover ${
-                part.image ? 'done' : 'notDone'
-              } ${partName == part.code ? 'clicked-part' : 'not-clicked'}`}
-              id={part.code}
-              onClick={() => clickPart(part.code)}
-            >
-              <p className='text'>{part.name}</p>
-              {partName == part.code ? (
-                <div className='flex-center moving-box-circle-container'>
-                  {partInfo.map((part) => (
-                    <img
-                      key={part.name}
-                      src={part.fabric.image}
-                      className='fabric-circle hover'
-                      alt={part.fabric.name}
-                      onClick={() => fabricChange(part)}
-                    />
-                  ))}
-                </div>
-              ) : (
-                <div> </div>
-              )}
-            </div>
-          ))}
-
-          {/* BAG DIAGRAM IMAGES */}
-          {parts.map((part) =>
-            part.image ? (
-              <img src={part.image} alt={part.name} className='bag-part' />
+      <div className='bag-images'>
+        {/* chose fabric icons */}
+        {parts.map((part) => (
+          <div
+            key={part.name}
+            className={`moving-box flex-center hover ${
+              part.image ? 'done' : 'notDone'
+            } ${partName == part.code ? 'clicked-part' : 'not-clicked'}`}
+            id={part.code}
+            onClick={() => clickPart(part.code)}
+          >
+            <p className='text'>{part.name}</p>
+            {partName == part.code ? (
+              <div className='moving-box-circle-container'>
+                {partInfo.map((part) => (
+                  <img
+                    key={part.name}
+                    src={part.fabric.image}
+                    className='fabric-circle hover'
+                    alt={part.fabric.name}
+                    onClick={() => fabricChange(part)}
+                  />
+                ))}
+              </div>
             ) : (
-              <div></div>
-            )
-          )}
-          <p className={`name-text ${textColor}`}>{newBag.name}</p>
-          <img src={bag} alt='bag' className='bag-part' />
-        </div>
-        {/* FINAL TOUCHES BOX */}
-        <div className='final-touches'>
-          <div className='flex-center add-name'>
-            <h3 className='text'>Add a name (optional):</h3>
-            <input onChange={addName} className='input-textbox' />
-            <div className='radio-buttons'>
-              <div>
-                <input
-                  type='radio'
-                  id='black'
-                  name='font-color'
-                  value='black'
-                  onChange={changeTextColor}
-                />
-                <label for='black'>black</label>
-              </div>
-              <div>
-                <input
-                  type='radio'
-                  id='white'
-                  name='font-color'
-                  value='white'
-                  onChange={changeTextColor}
-                />
-                <label for='white'>White</label>
-              </div>
+              <div> </div>
+            )}
+          </div>
+        ))}
+
+        {/* BAG DIAGRAM IMAGES */}
+        {parts.map((part) =>
+          part.image ? (
+            <img src={part.image} alt={part.name} className='bag-part' />
+          ) : (
+            <div></div>
+          )
+        )}
+        <p className={`name-text ${textColor}`}>{newBag.name}</p>
+        <img src={bag} alt='bag' className='bag-part' />
+      </div>
+      {/* FINAL TOUCHES BOX */}
+      <div className='final-touches'>
+        <div className='flex-center add-name'>
+          <h3 className='text'>Add a name (optional):</h3>
+          <input onChange={addName} className='input-textbox' />
+          <div className='radio-buttons'>
+            <div>
+              <input
+                type='radio'
+                id='black'
+                name='font-color'
+                value='black'
+                onChange={changeTextColor}
+              />
+              <label for='black'>black</label>
+            </div>
+            <div>
+              <input
+                type='radio'
+                id='white'
+                name='font-color'
+                value='white'
+                onChange={changeTextColor}
+              />
+              <label for='white'>White</label>
             </div>
           </div>
-          <button className='button hover' onClick={createBag}>
-            Create!
-          </button>
         </div>
+        <button className='button hover' onClick={createBag}>
+          Create!
+        </button>
       </div>
     </div>
   );

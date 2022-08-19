@@ -1,29 +1,49 @@
 import React from 'react';
 import Bag from '../media/baggif.gif';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { getLoggedInUserId } from '../api/auth';
 
 function Home() {
-  const loggedIn = window.sessionStorage.getItem('token');
-  const [logIn, setLogIn] = React.useState(loggedIn);
+  const navigate = useNavigate();
+  const [logIn, setLogIn] = React.useState(getLoggedInUserId());
   const location = useLocation();
 
   React.useEffect(() => {
-    setLogIn(loggedIn);
+    setLogIn(getLoggedInUserId());
   }, [location]);
 
+  function logout() {
+    sessionStorage.removeItem('token');
+    navigate('/');
+  }
+
   return (
-    <div className='flex-center'>
-      <div className='homebag-container flex-center'>
-        <h1 className='header-title'>Bag Factory</h1>
-        <img src={Bag} className='bag-gif' alt='bag gif' />
-      </div>
-      {!loggedIn && (
-        <div className='flower-button flex-center'>
-          <Link to='/login' className='remove-link hover'>
-            <p className='title'>Login</p>
-          </Link>
+    <div className='home-container'>
+      <div className='column-container'>
+        <div className='column1'>
+          <div className='behind-bag'></div>
+          <img src={Bag} className='bag-gif' alt='bag gif' />
         </div>
-      )}
+
+        <div className='column2'>
+          {!logIn ? (
+            <div className='button-container'>
+              <Link to='/register' className='button remove-link hover'>
+                Register
+              </Link>
+              <Link to='/login' className='button remove-link hover'>
+                Login
+              </Link>
+            </div>
+          ) : (
+            <div className='button-container'>
+              <div onClick={logout} className='button remove-link hover'>
+                Logout
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

@@ -128,22 +128,26 @@ function Products() {
 
   return (
     <div className='products-page'>
-      {!fabric ? <h1>Loading...</h1> : <h1>{fabric.name}</h1>}
-      <div className='products-box flex-center'>
+      {!fabric ? (
+        <h1 className='title'>Loading...</h1>
+      ) : (
+        <h1 className='title'>{fabric.name}</h1>
+      )}
+      <div className='products-container'>
         <div className='product-table'>
-          <div className='product-contents title'>
-            <p className='column'>Part</p>
-            <p className='column'>Quantity</p>
+          <div className='product-contents'>
+            <h1 className='column'>Part</h1>
+            <h1 className='column'>Quantity</h1>
           </div>
           {products ? (
             parts.map((part) => (
               <div
                 key={part}
-                className='product-contents each-product'
+                className='product-contents hover each-product'
                 onClick={() => editPart(part)}
               >
-                <p className='column'>{part}</p>
-                <p className='column'>{partQuantity(part)}</p>
+                <p className='column text'>{part}</p>
+                <p className='column text'>{partQuantity(part)}</p>
               </div>
             ))
           ) : (
@@ -151,36 +155,30 @@ function Products() {
           )}
         </div>
 
-        <div className='create-product'>
-          {create ? (
-            <div>
-              <h1>{newProduct.name}</h1>
-              <div className='flex-center'>
-                <p>quantity</p>
-                <input type='number' onChange={handleChange} />
-              </div>
-              <button onClick={imageUpload}>Upload image</button>
-              <button onClick={submitCreate}>Create product</button>
+        {create ? (
+          <div className='create-product'>
+            <h1>{newProduct.name}</h1>
+            <div className='flex-center'>
+              <p className='create-product-text'>quantity</p>
+              <input type='number' onChange={handleChange} />
             </div>
-          ) : (
-            <div>
-              <h1>{newProduct.name}</h1>
-              <div className='flex-center'>
-                <p>quantity</p>
-                <input type='number' onChange={handleChange} />
-              </div>
-              <button>Edit Product</button>
+            <button className='small-button hover' onClick={imageUpload}>
+              Upload image
+            </button>
+            <button className='small-button hover' onClick={submitCreate}>
+              Create product
+            </button>
+          </div>
+        ) : (
+          <div className='create-product'>
+            <h1>{newProduct.name}</h1>
+            <div className='flex-center'>
+              <p className='create-product-text'>quantity</p>
+              <input type='number' onChange={handleChange} />
             </div>
-          )}
-        </div>
-        <div className='bag-images'>
-          {bagImage ? (
-            <img src={bagImage} alt={bagImage} className='bag-part' />
-          ) : (
-            <p>hello</p>
-          )}
-          <img src={bag} alt='bag' className='bag-part' />
-        </div>
+            <button className='small-button hover'>Edit Product</button>
+          </div>
+        )}
       </div>
     </div>
   );
