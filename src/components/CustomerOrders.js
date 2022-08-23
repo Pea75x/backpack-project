@@ -12,7 +12,8 @@ function CustomerOrders() {
   const [allOrders, setAllOrders] = React.useState([]);
   const [filteredOrders, setFilteredOrders] = React.useState('clicktoview');
   const [update, setUpdate] = React.useState(false);
-  const [nextStatus, setNextStatus] = React.useState('');
+  const [currentStatus, setCurrentStatus] = React.useState('pending');
+  const [nextStatus, setNextStatus] = React.useState(null);
   const [createUpdate, setCreateUpdate] = React.useState(updateTemplate);
 
   const status = [
@@ -40,6 +41,7 @@ function CustomerOrders() {
     // get the name of the NEXT update to come
     const updateIndex = status.indexOf(statusUpdate) + 1;
     setNextStatus(status[updateIndex]);
+    setCurrentStatus(statusUpdate);
 
     const ordersByStatus = [];
     const orderByNextStatus = [];
@@ -83,7 +85,8 @@ function CustomerOrders() {
     const getData = async () => {
       try {
         await postStatus(createUpdate);
-        setUpdate(!update);
+        await setUpdate(!update);
+        filterOrderByStatus(currentStatus);
       } catch (error) {
         console.log(error);
       }
@@ -91,7 +94,7 @@ function CustomerOrders() {
     getData();
   }
 
-  console.log('all orders', allOrders);
+  console.log('filtered orders', filteredOrders);
 
   return (
     <div className='background'>
