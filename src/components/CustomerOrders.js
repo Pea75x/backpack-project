@@ -35,7 +35,7 @@ function CustomerOrders() {
       }
     };
     getData();
-  }, [update]);
+  }, [filteredOrders]);
 
   function filterOrderByStatus(statusUpdate) {
     // get the name of the NEXT update to come
@@ -85,7 +85,15 @@ function CustomerOrders() {
     const getData = async () => {
       try {
         await postStatus(createUpdate);
-        await setUpdate(!update);
+        const getData = async () => {
+          try {
+            const orderData = await getOrders();
+            setAllOrders(orderData);
+          } catch (err) {
+            console.log('order info error - ', err);
+          }
+        };
+        getData();
         filterOrderByStatus(currentStatus);
       } catch (error) {
         console.log(error);

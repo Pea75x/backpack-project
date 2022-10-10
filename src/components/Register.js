@@ -129,6 +129,12 @@ function Register() {
         <button type='submit' className='button login-submit hover'>
           Register Me!
         </button>
+        <p className='text'>
+          Already have an account?
+          <a className='black' href='/login'>
+            Login
+          </a>
+        </p>
       </form>
     </div>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import { loginUser } from '../api/auth';
 import { useNavigate } from 'react-router-dom';
+import Popup from './Popup';
 
 function Login() {
   const navigate = useNavigate();
@@ -78,6 +79,9 @@ function Login() {
           </p>
         </form>
       </div>
+
+      <Popup text='login' classStyle='login-popup' />
+      <Popup text='example' classStyle='example-bag-popup' />
     </div>
   );
 }
