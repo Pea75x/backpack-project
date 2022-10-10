@@ -17,8 +17,6 @@ function NavBar() {
     navigate('/');
   };
 
-  console.log(userId);
-
   React.useEffect(() => {
     setIsAdminState(isAdmin());
     setUserId(getLoggedInUserId());

@@ -37,14 +37,13 @@ function Order() {
       try {
         await postStatus(confirmOrder);
       } catch (err) {
-        console.log(err);
+        console.log('confirm order error', err);
       }
     };
     getData();
     setUpdate(!update);
   }
 
-  console.log(order);
   return (
     <div>
       <Link to={isAdmin() ? `/customer-orders` : `/myorders/${userId}`}>

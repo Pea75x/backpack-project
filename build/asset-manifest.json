@@ -1,19 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.5a9ca177.css",
-    "main.js": "/static/js/main.0809a244.js",
+    "main.css": "/static/css/main.fc73c349.css",
+    "main.js": "/static/js/main.f9d81859.js",
     "static/media/baggif.gif": "/static/media/baggif.6b7779deb7497fad855d.gif",
     "static/media/background.jpg": "/static/media/background.e53ed2c341b255dab6cc.jpg",
     "static/media/AaaPrachidHandWritten-0Km9.ttf": "/static/media/AaaPrachidHandWritten-0Km9.2f805f518ff4453163d7.ttf",
-    "static/media/backgoround.png": "/static/media/backgoround.cd59a8bd91c583088eef.png",
     "static/media/MasPendiWow-qZK90.ttf": "/static/media/MasPendiWow-qZK90.67fd0fa8d937f73d232c.ttf",
     "static/media/bag-body.svg": "/static/media/bag-body.ddd86f230f7bf4808d697b3bd6189283.svg",
     "index.html": "/index.html",
-    "main.5a9ca177.css.map": "/static/css/main.5a9ca177.css.map",
-    "main.0809a244.js.map": "/static/js/main.0809a244.js.map"
+    "main.fc73c349.css.map": "/static/css/main.fc73c349.css.map",
+    "main.f9d81859.js.map": "/static/js/main.f9d81859.js.map"
   },
   "entrypoints": [
-    "static/css/main.5a9ca177.css",
-    "static/js/main.0809a244.js"
+    "static/css/main.fc73c349.css",
+    "static/js/main.f9d81859.js"
   ]
 }

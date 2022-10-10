@@ -77,6 +77,17 @@ export const postStatus = async (status) => {
     url: `${baseUrl}/orderstatus/`,
     data: status
   };
-  const { data } = await axios.request(options);
-  return data;
+  await axios
+    .request(options)
+    .then((data) => {
+      if (data.status === 201) {
+        console.log('data step 1', data);
+        return data;
+      } else {
+        console.log('post status error ', data.details);
+      }
+    })
+    .catch((err) => {
+      console.log('post status error ', err);
+    });
 };

@@ -102,8 +102,6 @@ function CustomerOrders() {
     getData();
   }
 
-  console.log('filtered orders', filteredOrders);
-
   return (
     <div className='background'>
       <div className='container overflow-container'>
